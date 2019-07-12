@@ -24,15 +24,18 @@ public class FileReader {
 
 
     public static void loadFiles() throws  Exception{
-        if(fileName1 == null || fileName2 == null){
-            throw  new Exception("File name can not be empty");
+        if (fileName1 == null || fileName2.isEmpty()) {
+            throw new Exception("Info : File1 name can not be empty.");
+        }
+
+        if (fileName2 == null || fileName2.isEmpty()) {
+            throw new Exception("Info : File2 name can not be empty.");
         }
 
         bufferedReader1 = loadFile(fileName1);
         bufferedReader2 = loadFile(fileName2);
 
-        System.out.println("Files have been loaded successfully");
-
+        System.out.println("Info : Files have been loaded successfully");
     }
 
     public  static BufferedReader loadFile(String fileName) throws Exception{
@@ -41,15 +44,14 @@ public class FileReader {
         try {
             bufferedReader = new BufferedReader(new java.io.FileReader(new File(fileName)));
         }catch (FileNotFoundException fe){
-            fe.getMessage();
-
+             throw  new RuntimeException("Problem occured while loading file.");
         }
       return bufferedReader;
     }
 
     public static void countFilesLines(){
         fileInfo.setLineCount1(countLines(fileName1)).setLineCount2(countLines(fileName2));
-        System.out.println("Total lines form each file is:");
+        System.out.println("Info : Total lines form each file is:");
     }
 
     public static int countLines(String fileName){
@@ -60,11 +62,9 @@ public class FileReader {
             lineCount = Files.lines(path).count();
 
         } catch (Exception e){
-            e.getMessage();
-
+            throw  new RuntimeException("Problem occured while counting line.");
         }
         return  lineCount != null ? lineCount.intValue() : Integer.MAX_VALUE;
-
     }
 
     public static void loadUrlFromFiles() throws  Exception{
@@ -75,7 +75,7 @@ public class FileReader {
         fileInfo.setUrlArray1(new String[fileInfo.getLineCount1()]).setUrlArray2(new String[fileInfo.getLineCount2()]);
         loadUrls(bufferedReader1, fileInfo.getUrlArray1());
         loadUrls(bufferedReader2, fileInfo.getUrlArray2());
-        System.out.println("Url has been loaded in Array.");
+        System.out.println("Info : Url has been loaded in Array.");
     }
 
     public static void loadUrls(BufferedReader bufferedReader, String[] array){
@@ -86,25 +86,17 @@ public class FileReader {
                 array[i++] = str;
 
         } catch (Exception e){
-            e.getMessage();
-
-        }
-
-    }
-
-    public static void start(){
-        try {
-            loadFiles();
-            countFilesLines();
-            loadUrlFromFiles();
-        }
-        catch (Exception e){
-            e.getMessage();
-
+           throw  new RuntimeException("Problem occured while loading urls.");
         }
     }
 
-    public static void main(String[] argd){
-    start();
-    }
+    public static void start() throws Exception {
+          loadFiles();
+          countFilesLines();
+          loadUrlFromFiles();       
+   }
+
+ /*public static void main(String[] args) throws Exception{
+        start();
+    }*/
 }
