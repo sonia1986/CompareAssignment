@@ -19,7 +19,5 @@ public class RestClient {
         RestClient restClient = new RestClient();
         restClient.invokeRequest("https://regres.inn/api/users/3");
         System.out.print("Hello in RestClient");
-
     }
-
 }
