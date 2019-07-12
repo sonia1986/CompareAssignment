@@ -14,18 +14,18 @@ public class PropertyReader {
         try {
             InputStream inputStream = ClassLoader.getSystemResourceAsStream(Constants.PROPERTIES_NAME);
             properties.load(inputStream);
-            System.out.println("Property files has been loaded.");
+            System.out.println("Info : Property files has been loaded.");
         }
-        catch (IOException ioe){
-            ioe.getMessage();
+        catch (NullPointerException | IOException e) {
+            throw new RuntimeException("Problem occurred while loading properties file.");
         }
     }
 
     public static String getProperty(String key){
-        if(properties.containsKey(key)){
-            return (String) properties.get(key);
+        if(!properties.containsKey(key)){
+            throw new RuntimeException("Specified key = " + key + "is not available in properties file.");
         }
-        return null;
+        return (String) properties.get(key);
     }
 
 }
