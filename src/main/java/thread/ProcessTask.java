@@ -17,9 +17,7 @@ public class ProcessTask implements Callable {
     public Object call(){
         process(task);
         return null;
-
     }
-
 
     public  void  process(Task task){
         IComparator comparator = ComparatorFactory.getComparator("ALL");
