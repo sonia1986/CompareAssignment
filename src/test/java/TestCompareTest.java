@@ -1,9 +1,12 @@
 import bean.FileInfo;
+import constant.Constants;
+import executor.ComparatorTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import reader.FileReader;
+import reader.PropertyReader;
 
-public class CompareTestcase {
+public class TestCompareTest {
 
     @Test
     public void test_is_file_url_count_equal_and_match_with_avaliable_data() throws Exception{
@@ -17,4 +20,14 @@ public class CompareTestcase {
             Assert.assertEquals(countUrlForFile1,countUrlForFile2);
         }
     }
+
+    @Test
+    public void test_comparator(){
+        PropertyReader propertyReader = new PropertyReader();
+        propertyReader.setProperty(Constants.FILE_NAME1, "src/main/resources/dataset3/file1.txt");
+        propertyReader.setProperty(Constants.FILE_NAME2, "src/main/resources/dataset3/file2.txt");
+        ComparatorTest.startComparatorProcess();
+
+    }
+
 }

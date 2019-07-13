@@ -9,6 +9,7 @@ import java.util.Properties;
 public class PropertyReader {
 
     private static final Properties properties = new Properties();
+    private static final PropertyReader propertyreader = new PropertyReader();
 
     static {
         try {
@@ -21,11 +22,23 @@ public class PropertyReader {
         }
     }
 
+    private static PropertyReader getPropertyreader() {
+
+        return propertyreader;
+
+    }
+
     public static String getProperty(String key){
-        if(!properties.containsKey(key)){
+        if(!properties.containsKey(key)) {
             throw new RuntimeException("Specified key = " + key + "is not available in properties file.");
         }
+
         return (String) properties.get(key);
+    }
+
+    public void setProperty(String key, String value){
+        properties.setProperty(key, value);
+
     }
 
 }
