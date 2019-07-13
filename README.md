@@ -25,6 +25,11 @@ Have used abstract factory pattern for response type when request is hit based o
   $ mvn test  - Run all the test classess
   $ mvn -Dtest=TestCompareTest  test
   $ mvn -Dtest=TestCompareTest#<any testcase name> test    - Run a single test method
+  
+$ cd maven-unit-test
+$ mvn test
+$ mvn -Dtest=TestMessageBuilder test
+$ mvn -Dtest=TestMessageBuilder#testHelloWorld test  
  
 # Possible errors can come
   When using running application please install all maven libraries.
