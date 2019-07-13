@@ -18,3 +18,15 @@ Each file contains (http/https) api’s separated by new line.
 Have used abstract factory pattern for response type when request is hit based on their getMediaType and Subtype. Then this object is passed to getComparator and goes as per given Comparator and do validation.
 
 # Running the application
+  Running the whole comparator project  mvn install  ComparatorTest
+
+# For running the tests
+  mvn clean install to execute full test suite
+  $ mvn test  - Run all the test classess
+  $ mvn -Dtest=TestCompareTest  test
+  $ mvn -Dtest=TestCompareTest#<any testcase name> test    - Run a single test method
+ 
+# Possible errors can come
+  When using running application please install all maven libraries.
+
+# Running the test suite and application using Jenkins pipeline   
