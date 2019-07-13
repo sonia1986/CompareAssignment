@@ -7,6 +7,9 @@ public class AllComparator implements IComparator {
 
     @Override
     public boolean compare(Object obj1, Object obj2) {
+        Response response1 = (Response) obj1;
+        Response response2 = (Response) obj2;
+        
         boolean isEqual = true;
         if (response1 == null) {
             isEqual = false;
