@@ -15,4 +15,6 @@ Each file contains (http/https) api’s separated by new line.
 
 
 # Design:
-Have used abstract factory pattern for response type when request is hit.
+Have used abstract factory pattern for response type when request is hit based on their getMediaType and Subtype. Then this object is passed to getComparator and goes as per given Comparator and do validation.
+
+#Running the application
