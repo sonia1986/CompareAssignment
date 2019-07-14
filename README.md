@@ -29,7 +29,9 @@ Have used abstract factory pattern for response type when request is hit based o
 # Possible errors can come
 
   When using running application please install all maven libraries.
-  
+
+# Things to keep in mind
+  I have already added data sets with more variations if you would like to test your dataset with compare utility please put in resources folder and change in fileName.properties. Otherwise change in testmethod in TestComparatorTest file then you will all set to go.  
 
 # Running the test suite and application using Jenkins pipeline 
 
