@@ -28,15 +28,11 @@ public class ComparatorTest {
 
         } catch (Exception e) {
             System.out.println("Exception : "+ e.getMessage());
-        }
-
-
+       }
     }
 
     public static void main(String[] args) {
         startComparatorProcess();
 
     }
-
-
 }
