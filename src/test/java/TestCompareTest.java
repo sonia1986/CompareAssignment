@@ -2,11 +2,20 @@ import bean.FileInfo;
 import constant.Constants;
 import executor.ComparatorTest;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import reader.FileReader;
 import reader.PropertyReader;
+import java.lang.reflect.Method;
 
 public class TestCompareTest {
+
+    @BeforeMethod
+    public void beforeTestcase(Method m){
+        String testcaseName = m.getName();
+        System.out.println("Executing test: " + testcaseName);
+
+    }
 
     @Test
     public void test_is_file_url_count_equal_and_match_with_avaliable_data() throws Exception{
@@ -29,5 +38,7 @@ public class TestCompareTest {
         ComparatorTest.startComparatorProcess();
 
     }
+
+
 
 }

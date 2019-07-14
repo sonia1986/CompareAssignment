@@ -32,11 +32,10 @@ public class Task {
     }
     public String getUrl2(){return  url2;}
 
-    public Task setUrl2(String url2){
+    public Task setUrl2(String url2) {
         this.url2 = url2;
-        return  this;
+        return this;
 
     }
-
 
 }

@@ -18,7 +18,7 @@ public class ProcessTask implements Runnable {
      }
 
     public  void  process(Task task){
-        IComparator comparator = ComparatorFactory.getComparator("ALL");
+        IComparator comparator = ComparatorFactory.getComparator(ALL);
         boolean flag =  comparator.compare(new RestClient().invokeRequest(task.getUrl1()), new RestClient().invokeRequest(task.getUrl2()));
         String message = flag ? EQUALS : NOT_EQUALS;
         message = task.getIndex() + " - " +task.getUrl1() + " " + message + " " + task.getUrl2();
