@@ -21,12 +21,15 @@ Have used abstract factory pattern for response type when request is hit based o
   Running the whole comparator project  mvn install  ComparatorTest
 
 # For running the tests
-  mvn clean install to execute full test suite
-  $ mvn test  - Run all the test classess
-  $ mvn -Dtest=TestCompareTest  test
-  $ mvn -Dtest=TestCompareTest#<any testcase name> test    - Run a single test method
+  $ mvn clean install to execute full test suite
+  $  mvn test  - Run all the test classess
+  $  mvn -Dtest=TestCompareTest  test
+  $  mvn -Dtest=TestCompareTest#<any testcase name> test    - Run a single test method
  
 # Possible errors can come
-  When using running application please install all maven libraries.
 
-# Running the test suite and application using Jenkins pipeline   
+  When using running application please install all maven libraries.
+  
+
+# Running the test suite and application using Jenkins pipeline 
+
