@@ -18,7 +18,7 @@ https://reqres.in/api/users?page=18
 https://reqres.in/api/users?page=19
 https://reqres.in/api/users?page=20
 https://reqres.in/api/users?page=21
-https://reqres.in/api/users?page=22
+https://www.w3schools.com/xml/note.xml
 https://reqres.in/api/users?page=23
 https://reqres.in/api/users?page=24
 https://reqres.in/api/users?page=25
@@ -96,7 +96,7 @@ https://reqres.in/api/users?page=96
 https://reqres.in/api/users?page=97
 https://reqres.in/api/users?page=98
 https://reqres.in/api/users?page=99
-https://reqres.in/api/users?page=100
+http://www.w3schools.com/xml/note.xml
 https://reqres.in/api/users?page=101
 https://reqres.in/api/users?page=102
 https://reqres.in/api/users?page=103
