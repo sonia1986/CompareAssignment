@@ -43,7 +43,7 @@ public class TestCompareTest {
     public void test_comparator_when_huge_file_dataset() {
 
         PropertyReader.setProperty(Constants.FILE_NAME1, "src/main/resources/dataset2/file1.txt");
-        PropertyReader.setProperty(Constants.FILE_NAME2, "src/main/resources/dataset2git st/file2.txt");
+        PropertyReader.setProperty(Constants.FILE_NAME2, "src/main/resources/dataset2/file2.txt");
         ComparatorTest.startComparatorProcess();
 
     }
