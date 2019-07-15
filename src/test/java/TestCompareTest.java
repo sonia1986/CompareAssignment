@@ -10,12 +10,12 @@ import java.lang.reflect.Method;
 
 public class TestCompareTest {
 
-    @BeforeMethod
-    public void beforeTestcase(Method m){
-        String testcaseName = m.getName();
-        System.out.println("Executing test: " + testcaseName);
-
-    }
+//    @BeforeMethod
+//    public void beforeTestcase(Method m){
+//        String testcaseName = m.getName();
+//        System.out.println("Executing test: " + testcaseName);
+//
+//    }
 
     @Test
     public void test_is_file_url_count_equal_and_match_with_avaliable_data() throws Exception{
@@ -31,14 +31,22 @@ public class TestCompareTest {
     }
 
     @Test
-    public void test_comparator(){
-        PropertyReader propertyReader = new PropertyReader();
-        propertyReader.setProperty(Constants.FILE_NAME1, "src/main/resources/dataset3/file1.txt");
-        propertyReader.setProperty(Constants.FILE_NAME2, "src/main/resources/dataset3/file2.txt");
+    public void test_comparator() {
+
+        PropertyReader.setProperty(Constants.FILE_NAME1, "src/main/resources/dataset3/file1.txt");
+        PropertyReader.setProperty(Constants.FILE_NAME2, "src/main/resources/dataset3/file2.txt");
         ComparatorTest.startComparatorProcess();
 
     }
 
+    @Test
+    public void test_comparator_when_huge_file_dataset() {
+
+        PropertyReader.setProperty(Constants.FILE_NAME1, "src/main/resources/dataset2/file1.txt");
+        PropertyReader.setProperty(Constants.FILE_NAME2, "src/main/resources/dataset2git st/file2.txt");
+        ComparatorTest.startComparatorProcess();
+
+    }
 
 
 }

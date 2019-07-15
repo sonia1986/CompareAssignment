@@ -27,16 +27,11 @@ public class ComparatorTest {
             executorService.shutdown();
 
         } catch (Exception e) {
-            System.out.println("Exception : "+ e.getMessage());
+            System.out.println("Exception : " + e.getMessage());
         }
-
-
     }
 
     public static void main(String[] args) {
         startComparatorProcess();
-
     }
-
-
 }

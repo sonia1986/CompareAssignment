@@ -14,13 +14,21 @@ import java.nio.file.Paths;
 
 public class FileReader {
 
-    private final static String fileName1 =  PropertyReader.getProperty(Constants.FILE_NAME1);
-    private final static String fileName2 =  PropertyReader.getProperty(Constants.FILE_NAME2);
+    private static String fileName1;
+    private static String fileName2;
     private static final FileInfo fileInfo = FileInfo.getSingleton();
 
 
     private static BufferedReader bufferedReader1;
     private static BufferedReader bufferedReader2;
+
+
+    public static void loadFileName() {
+
+        fileName1 =  PropertyReader.getProperty(Constants.FILE_NAME1);
+        fileName2 =  PropertyReader.getProperty(Constants.FILE_NAME2);
+
+    }
 
 
     public static void loadFiles() throws  Exception{
@@ -91,6 +99,7 @@ public class FileReader {
     }
 
     public static void start() throws Exception {
+          loadFileName();
           loadFiles();
           countFilesLines();
           loadUrlFromFiles();       

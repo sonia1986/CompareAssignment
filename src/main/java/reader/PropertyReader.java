@@ -22,7 +22,7 @@ public class PropertyReader {
         }
     }
 
-    private static PropertyReader getPropertyreader() {
+    public static PropertyReader getPropertyreader() {
 
         return propertyreader;
 
@@ -36,9 +36,13 @@ public class PropertyReader {
         return (String) properties.get(key);
     }
 
-    public void setProperty(String key, String value){
+    public static void setProperty(String key, String value){
         properties.setProperty(key, value);
 
     }
+
+    /*public static PropertyReader getProperties(){
+        return properties;
+    }*/
 
 }
